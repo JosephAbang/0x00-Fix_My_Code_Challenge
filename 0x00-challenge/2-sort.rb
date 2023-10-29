@@ -6,11 +6,12 @@
 
 result = []
 ARGV.each do |arg|
-    # skip if not integer
-    next unless arg.match?(/^\d+$/)
-
-    # convert to integer
-    i_arg = arg.to_i
+    # Convert to integer or skip if not a valid integer
+    begin
+      i_arg = Integer(arg)
+    rescue ArgumentError
+      next
+    end
     
     # insert result at the right position
     is_inserted = false

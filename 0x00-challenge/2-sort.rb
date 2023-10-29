@@ -17,7 +17,6 @@ ARGV.each do |arg|
     is_inserted = false
     result.each_with_index do |val, i|
       if i_arg < val
-        else
           result.insert(i, i_arg)
           is_inserted = true
           break
